@@ -118,6 +118,10 @@ h1, h2 {
 .iso-alert { animation-name: iso-alert; }
 .iso-fixed { animation-name: iso-fixed; }
 .iso-tw { animation: iso-tw 4s ease-in-out infinite; }
+.iso-float { animation: iso-float 6s ease-in-out infinite; }
+.iso-shadow { transform-box: fill-box; transform-origin: center; animation: iso-shadow 6s ease-in-out infinite; }
+@keyframes iso-float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-7px); } }
+@keyframes iso-shadow { 0%, 100% { transform: scale(1); opacity: 1; } 50% { transform: scale(.93); opacity: .7; } }
 
 @keyframes iso-trip { 0% { opacity: 0; transform: translate(0, 0); } 1.5% { opacity: 1; } 11.4% { transform: translate(var(--ax), var(--ay)); } 19% { opacity: 1; transform: translate(var(--bx), var(--by)); } 20%, 100% { opacity: 0; transform: translate(var(--bx), var(--by)); } }
 @keyframes iso-hop { 0% { opacity: 0; transform: translate(0, 0); } 1.5% { opacity: 1; } 5.4% { transform: translate(var(--ax), var(--ay)); } 9% { opacity: 1; transform: translate(var(--bx), var(--by)); } 10%, 100% { opacity: 0; transform: translate(var(--bx), var(--by)); } }
@@ -286,13 +290,20 @@ main::before {
   .proof { grid-template-columns: repeat(4, minmax(0, 1fr)); }
 }
 @media (min-width: 960px) {
-  .hero-grid { grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); gap: 32px; }
+  .hero-grid { grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); gap: 28px; }
   .hero h1 { font-size: clamp(2.5rem, 2.3vw + 1.2rem, 3.375rem); }
   .scene { max-width: none; margin-right: -20px; }
   .split { grid-template-columns: minmax(0, 4fr) minmax(0, 8fr); gap: 48px; }
   .offers > div { grid-template-columns: minmax(0, 2fr) minmax(0, 3fr); gap: 24px; align-items: baseline; }
   .about { grid-template-columns: 140px minmax(0, 1fr); }
   .portrait { width: 140px; height: 140px; }
+}
+@media (min-width: 1200px) {
+  .hero-grid { grid-template-columns: minmax(0, 5.2fr) minmax(0, 6.6fr); }
+  .hero h1 { font-size: clamp(2.5rem, 2.3vw + 1.2rem, 3.25rem); }
+}
+@media (min-width: 1320px) {
+  .scene { margin-right: -44px; }
 }
 @media (max-width: 719px) {
   main::before, .block::before { display: none; }
@@ -314,7 +325,7 @@ main::before {
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  .sv-a, .sv-flow, .iso-a, .iso-tw, .pill .dot, .steps li::before, .steps li::after { animation: none !important; }
+  .sv-a, .sv-flow, .iso-a, .iso-tw, .iso-float, .iso-shadow, .pill .dot, .steps li::before, .steps li::after { animation: none !important; }
 }
 @media (forced-colors: active) {
   h1, h2 { background: none; color: CanvasText; -webkit-text-fill-color: CanvasText; }
