@@ -104,7 +104,16 @@ h1, h2 {
 /* ---------- hero ---------- */
 .hero { padding: clamp(40px, 7vw, 96px) 0 0; }
 .hero-grid { display: grid; gap: clamp(36px, 6vw, 56px); align-items: center; }
-.scene { margin: 0; max-width: 640px; }
+.scene { position: relative; margin: 0; max-width: 640px; }
+/* the float runs on the whole picture (cheap for the browser); the shadow stays on the ground */
+.scene .iso { animation: iso-float 6s ease-in-out infinite; will-change: transform; }
+.scene .iso-float, .scene .iso-shadow { animation: none; }
+.scene .iso-shadow { display: none; }
+.scene::after {
+  content: ""; position: absolute; z-index: -1; left: 14%; right: 14%; bottom: 2%; height: 12%;
+  background: radial-gradient(closest-side, rgba(0, 0, 0, .55), transparent);
+  animation: iso-shadow 6s ease-in-out infinite; will-change: transform, opacity;
+}
 
 /* ---------- hero scene: shops → scraper → your sheet, one 8-second loop ---------- */
 .iso { display: block; width: 100%; height: auto; }
@@ -325,7 +334,7 @@ main::before {
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  .sv-a, .sv-flow, .iso-a, .iso-tw, .iso-float, .iso-shadow, .pill .dot, .steps li::before, .steps li::after { animation: none !important; }
+  .sv-a, .sv-flow, .iso-a, .iso-tw, .iso-float, .iso-shadow, .scene .iso, .scene::after, .pill .dot, .steps li::before, .steps li::after { animation: none !important; }
 }
 @media (forced-colors: active) {
   h1, h2 { background: none; color: CanvasText; -webkit-text-fill-color: CanvasText; }
