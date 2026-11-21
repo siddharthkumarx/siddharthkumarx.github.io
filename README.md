@@ -12,7 +12,7 @@ Plain HTML and CSS on GitHub Pages: no build step, no scripts, no forms, no exte
 | `assets/fonts/` | Plus Jakarta Sans, Latin subset, weights 400 to 700 (SIL Open Font License) |
 | `assets/img/siddharth-kumar.webp` | Photo, 800 px; `siddharth-kumar-400.webp` is the 400 px copy |
 | `assets/og.png` | Link preview picture, 1200 × 630 |
-| `favicon.svg` | The SteadyData mark |
+| `favicon.ico`, `assets/img/icon.svg`, `assets/img/apple-touch-icon.png`, `assets/img/icon-192.png`, `assets/img/logo-512.png`, `site.webmanifest` | The SteadyData mark, the same icon set as steadydata.co (copied from its repo, not edited here) |
 | `llms.txt` | Short plain-text summary for AI assistants |
 | `robots.txt`, `sitemap.xml` | Crawler rules and the page list |
 | `CNAME` | Serves this site at siddharthkumar.com |
