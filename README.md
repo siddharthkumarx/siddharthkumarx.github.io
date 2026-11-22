@@ -15,6 +15,7 @@ Plain HTML and CSS on GitHub Pages: no build step, no scripts, no forms, no exte
 | `favicon.ico`, `assets/img/icon.svg`, `assets/img/apple-touch-icon.png`, `assets/img/icon-192.png`, `assets/img/logo-512.png`, `site.webmanifest` | The SteadyData mark, the same icon set as steadydata.co (copied from its repo, not edited here) |
 | `llms.txt` | Short plain-text summary for AI assistants |
 | `robots.txt`, `sitemap.xml` | Crawler rules and the page list |
+| `docs/maintainers.md`, `tests/check_canvas.cjs` | The canvas rule for every picture, and its check (`node tests/check_canvas.cjs`) |
 | `CNAME` | Serves this site at siddharthkumar.com |
 | `.nojekyll` | Serves the files exactly as they are |
 
@@ -22,4 +23,4 @@ Plain HTML and CSS on GitHub Pages: no build step, no scripts, no forms, no exte
 
 ## Changing the photo
 
-Replace both photo files with square WebP images of the same names (800 × 800 and 400 × 400), then render a new `assets/og.png` with the same photo.
+Replace both photo files with square WebP images of the same names (800 × 800 and 400 × 400), then render a new `assets/og.png` with the same photo, on the `#F3F8F7` canvas (`docs/maintainers.md`).
