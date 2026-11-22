@@ -141,6 +141,13 @@ h1 {
   line-height: 1.6;
   text-wrap: pretty;
 }
+.delivery {
+  margin-top: 8px;
+  color: var(--muted);
+  font-size: .9375rem;
+  line-height: 1.5;
+  text-wrap: pretty;
+}
 
 .promises {
   list-style: none;
